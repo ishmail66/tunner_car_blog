@@ -1,8 +1,64 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+h3{
+  text-align: center;
+}
+section {
+ 
+  width: 80%;
+  margin: 0 auto;
+  
+}
+section > div{
+  
+  text-align: center;
+  
+
+}
+.amat{
+  min-height:100vh;
+}
+md-dialog{
+  min-width:400px;
+}
+md-dialog form{
+  padding:15px;
+  margin-top:30px;
+}
+md-input-container .md-input-messages-animation{
+  max-width:300px;
+}
+h1{
+  font-size: 45px;
+}
+h2{
+  text-align: center;
+}
+.md-card-image{
+ width: 100%;
+    height: 100%;
+    display: inline-block;
 }
 
-a {
-  color: #00B7FF;
+#banner{
+  background-image: url("http://1.bp.blogspot.com/-ZQ4OkBfUgas/UWxfX5N5D5I/AAAAAAAAao0/k9S2CThiNFs/s1600/Nissan+Skyline+GT-R++1968-1972.jpg" );
+  height: 100%;
+  background-color:rgb(146, 146, 146);
+  background-size: cover;
+  background-blend-mode: multiply; 
+  
+  
+}
+
+#banner h2{
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 100px;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white , 0 -1px white}
+
+#banner p{
+  color: aliceblue;
+  font-size: 25px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar){
+  background-color: black;
 }
