@@ -2,6 +2,7 @@
 
 <head>
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
 
   <meta name="viewport" content="initial-scale=1" />
 
@@ -46,8 +47,24 @@ h2{
     display: inline-block;
 }
 
-.banner{
-  background-image: url(https://www.google.com/url?sa=i&source=images&cd=&ved=&url=https%3A%2F%2Fwww.nissan.co.uk%2Fvehicles%2Fnew-vehicles%2Fgt-r.html&psig=AOvVaw28uPGYhhT8yRXtlajvFviy&ust=1549448736419356)
+#banner{
+  background-image: url("http://1.bp.blogspot.com/-ZQ4OkBfUgas/UWxfX5N5D5I/AAAAAAAAao0/k9S2CThiNFs/s1600/Nissan+Skyline+GT-R++1968-1972.jpg" );
+  height: 100%;
+  background-color:rgb(146, 146, 146);
+  background-size: cover;
+  background-blend-mode: multiply; 
+  
+}
+
+#banner h2{
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 100px;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white , 0 -1px white}
+
+#banner p{
+  color: aliceblue;
+  font-size: 25px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
   </style>
@@ -79,6 +96,9 @@ h2{
         
         <div ng-hide="loggedIn==false">
           <md-button ng-click="logout()" class="md-raised">Logout </md-button>
+          <md-button>hOME</md-button>
+          <md-button>ARCHIVE</md-button>
+          <md-button>CREATE</md-button>
         </div>
          
     </div>
@@ -95,8 +115,8 @@ h2{
   
 
     <div flex layout-padding>
-      <div class="banner">
-      <h2 class="md-display-2">TUNNER CAR BLOG</h2>
+      <div id="banner">
+      <h2 class="md-display-2">TUNER CAR BLOG</h2>
       <p>Car tuning is the modification of the performance or appearance of a vehicle. For actual "tuning" in the sense of automobiles or vehicles, see engine tuning. Most vehicles stay the factory set up for an average driver's expectations and conditions. Tuning, on the other hand, has become a way to personalize the characteristics of a vehicle to the owner's preference. Cars may be altered to provide better fuel economy, produce more power, or provide better handling and driving.
 
           Car tuning is related to auto racing, although most performance cars never compete. Tuned cars are built for the pleasure of owning and driving. Exterior modifications include changing the aerodynamic characteristics of the vehicle via side skirts, front and rear bumpers, spoilers, splitters or air vents and lightweight wheels.</p>
