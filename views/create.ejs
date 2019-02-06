@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>create</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+    <% include ./partials/menu %>
+
+
+    <div class="container">
+        <div class="panel panel-danger">
+            <div class="panel panel-heading text-center">
+                <h1>It's your time to add to the blog.</h1>
+            </div>
+
+                     
+                           
+                <form method="POST" action="">
+
+                    <div class="form-group col-xs-12 col-sm-6 col-sm-offset-3">
+                        <label for="exampleInputName">Hero Name</label>
+                        <input type="text" class="form-control" id="exampleInputName" aria-describedby="heroName" placeholder="Enter Hero Name" name="name">
+                        <!-- <small id=heroName" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    </div>
+                    <div class="form-group col-xs-12 col-sm-6 col-sm-offset-3">
+                        <label for="exampleInputURL">Image URL</label>
+                        <input type="text" class="form-control" id="exampleInputURL" placeholder="Link to hero image" name="image_url">
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+                        <button type="submit" class="btn btn-success btn-block">Add Hero</button>
+                    </div>
+
+                </form>
+
+            </div>
+            
+            <div class="panel-footer text-center">
+                <p>All rights reserved 2018 | Nate.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

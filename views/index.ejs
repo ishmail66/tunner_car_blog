@@ -1,175 +1,140 @@
-<html lang="en" ng-app="StarterApp">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  
-  <!-- Custom fonts for this template -->
+    <meta charset="UTF-8">
+    <title>Hero App</title>
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Staatliches" rel="stylesheet">
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
     rel='stylesheet' type='text/css'>
- 
-  <!-- Custom styles for this template -->
-  <link href="css/clean-blog.min.css" rel="stylesheet">
-  <meta name="viewport" content="initial-scale=1" />
-  <script src='/javascripts/main.js'></script>
-  <link rel="stylesheet" href='/stylesheets/style.css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
-</head>
-
-<!--start with a column layout, nest a row layout inside for the content-->
-
-<body layout="column" ng-controller="AppCtrl">
-
-  <!--our first material directive, a simple toolbar -->
-  <md-toolbar>
-    <div class="md-toolbar-tools">
-      
-      <!-- fill up the space between left and right area -->
-      <span flex></span>
-      <div ng-hide="loggedIn">
-      
-      
-        <md-input-container>
-          <label>email</label>
-          <input ng-model="user.email">
-        </md-input-container>
-        <md-input-container>
-          <label>Password</label>
-          <input ng-model="user.password" type="password">
-        </md-input-container>
-        <md-button ng-click="showPrompt()" class="md-raised">Login</md-button>
-              </div>
+    <style>
+        body { padding-top:15px; background-color: #ccc;}
+        img { width: 100%;}
         
-        <div ng-hide="loggedIn==false">
-          <md-button ng-click="logout()" class="md-raised">Logout </md-button>
-          <md-button>HOME</md-button>
-          <md-button>ARCHIVE</md-button>
-          <md-button>CREATE</md-button>
-        </div>
-         
-    </div>
-  </md-toolbar>
-<div id="content">
-  
-  
-  <section ng-show="!loggedIn">
-    <h1>You should log in if you want to see this content</h1>
-  </section>
-  
-  <!--this section is the second cell of a column-->
-  <section ng-show = "loggedIn" class="amat" layout="row" flex>
-  
-
-    <div flex layout-padding>
-      <div id="banner">
-      <h2 class="md-display-2">TUNER CAR BLOG</h2>
-      <p>Car tuning is the modification of the performance or appearance of a vehicle. For actual "tuning" in the sense of automobiles or vehicles, see engine tuning. Most vehicles stay the factory set up for an average driver's expectations and conditions. Tuning, on the other hand, has become a way to personalize the characteristics of a vehicle to the owner's preference. Cars may be altered to provide better fuel economy, produce more power, or provide better handling and driving.
-
-          Car tuning is related to auto racing, although most performance cars never compete. Tuned cars are built for the pleasure of owning and driving. Exterior modifications include changing the aerodynamic characteristics of the vehicle via side skirts, front and rear bumpers, spoilers, splitters or air vents and lightweight wheels.</p>
-    </div>
-  </div>
-  </section>
-  </div>
-  <script type="text/ng-template" id="login.tmpl.html">
-  <md-dialog aria-label="Home Monitor Login" md-theme="login">
-      <md-toolbar>
-        <div class="md-toolbar-tools">
-          <h2>{{dialogPromptMessage}}</h2>
-          <span flex></span>
-          <md-button class="md-icon-button" ng-click="cancel()">X
-          </md-button>
-        </div>
-      </md-toolbar>
-
-      <md-dialog-content style="max-width:500px;max-height:600px; ">
-        <form name="accountLogin">
-
-          <md-input-container class="md-block">
-            <label>eMail</label>
-            <input ng-model="user.email" type="email" name="email" minlength="10" required>
-          </md-input-container>
-          <md-input-container class="md-block">
-            <label>Password</label>
-            <input ng-model="user.password" type="password" name="company">
-          </md-input-container>
-        </form>
-      </md-dialog-content>
-     <md-dialog-actions layout="row" md-whiteframe="2">
-   
-   <span flex> </span>
+    </style>
+ <% include partials/head %> 
+</head>
+<body>
+<% include partials/menu %>
+<div class="container-fluid bg-3 text-center">
+        <div flex layout-padding>
+                <div id="banner">
+                <h2 class="md-display-2">TUNER CAR BLOG</h2>
+                <p>Car tuning is the modification of the performance or appearance of a vehicle. For actual "tuning" in the sense of automobiles or vehicles, see engine tuning. Most vehicles stay the factory set up for an average driver's expectations and conditions. Tuning, on the other hand, has become a way to personalize the characteristics of a vehicle to the owner's preference. Cars may be altered to provide better fuel economy, produce more power, or provide better handling and driving.
+          
+                    Car tuning is related to auto racing, although most performance cars never compete. Tuned cars are built for the pleasure of owning and driving. Exterior modifications include changing the aerodynamic characteristics of the vehicle via side skirts, front and rear bumpers, spoilers, splitters or air vents and lightweight wheels.</p>
+              </div>
+            </div>  
+  <h2 class="md-display-2"><%= page %></h2><br>
+   <div class="row">
+    <div class="col-sm-4">
+        <img src="https://images.complex.com/complex/image/upload/c_limit,w_680/fl_lossy,pg_1,q_auto/sqy1qe7c6pj3h1xdur4k.jpg" alt="">
+      <p>Years Of Production: 1964-Present
+            Potential: Shocking
+            Complex Says: People have tuned Mustangs to make more than 1,000hp. That is all.</p>
       
-   <md-button ng-click="cancel()">Cancel </md-button>
-
-    <md-button ng-click="login(user.email, user.password)" md-autofocus class="md-raised md-primary"> Login </md-button>
-		</md-dialog-actions>
-
-    </md-dialog>
-  </script>
-  
-  <header class="masthead">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="page-heading">
-              <h1>Create New Post</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-     
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 offset-md-2">
-          <form action="/posts/store" method="POST">
-            <div class="control-group">
-              <div class="form-group floating-label-form-group controls">
-                <label>Title</label>
-                <input type="text" name="title" placeholder="Title" class="form-control">
-              </div>
-            </div>
-            <div class="control-group">
-              <div class="form-group floating-label-form-group controls">
-                <label>Description</label>
-                <input type="text" name="description" placeholder="Description" class="form-control">
-              </div>
-            </div>
-            <div class="control-group">
-              <div class="form-group floating-label-form-group controls">
-                <label>Content</label>
-                <textarea name="content" placeholder="Content ..." cols="30" rows="10" class="form-control"></textarea>
-              </div>
-            </div>
-            <div class="form-group my-4 text-center">
-              <button class="btn btn-primary">Create Post</button>
-            </div>
-          </form>
-        </div>
-      </div>
     </div>
-   
-    
-  
-   <!-- Angular Material Dependencies -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+    <div class="col-sm-4"> 
+        <img src="https://images.complex.com/complex/image/upload/c_limit,w_680/fl_lossy,pg_1,q_auto/yv0720suiugfkroghayd.jpg" alt="">
+      <p>Years Of Production: 1999-2009
+            Potential: Race-spec
+            Complex Says: There's not much to tune on the brilliant Honda S2000. Just put in a few upgrades to make it race-worthy, and you have a really cool car.</p>
+    </div>
+    <div class="col-sm-4"> 
+        <img src="https://images.complex.com/complex/image/upload/c_limit,w_680/fl_lossy,pg_1,q_auto/qkle8wmfn7p2qevina68.jpg" alt="">
+      <p>Years Of Production: 1938-2003
+            Potential: Hilarious
+            Complex Says: Beetles have been turned into dune-racing Baja Bugs, tire-shredding drag racers, sports cars, and who the heck knows what else. What do you plan to do with yours?</p>
+    </div>
+  </div>
+</div> 
+<!-- TEST -->
+<!-- <div class="container-fluid bg-3 text-center">     -->
+  <!-- <h3><%= page %></h3><br> -->
+  <!-- <div class="row">
+    <div class="col-sm-4">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      
+    </div>
+    <div class="col-sm-4"> 
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div class="col-sm-4"> 
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+  </div>
+</div> -->
 
-<script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+      <div class="panel-body" id="all">
 
- <!-- AngularFire -->
-<script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+      </div>
+<!-- <script src="js/ejs.min.js"></script> -->
+<script>
+        //the url we are making a request to
+        var url = "http://localhost:8000/pokemon";
+        $.ajax({
+            url: url,
+            method: 'get',
+            success: function(data){
+                //do something when call is successful
+                // console.log(data);
+                let pokemon = data;
+                
+                // With jQuery:
+              //   $('#all').html(html);
+                // Vanilla JS:
+                var html= document.getElementById('all').innerHTML;
+            }, 
+            error: function(error){
+                console.log(error);
+            }
+        });
+      </script>
+      
+      <script>
+        //targeting my container
+        var box = document.getElementById('all');
+        //the url we are making a request to
+        var url = "http://localhost:8000/pokemon";
+        $.ajax({
+            url: url,
+            method: 'get',
+            success: function(data){
+              //   do something when call is successful
+                console.log(data);
+                $.each(data, function(index, value){
+                    var container = document.createElement('div');
+                    container.className = 'col-xs-6 col-md-2';
+                    var panel = document.createElement('div');
+                    panel.className = 'panel panel-default';
+                    var body = document.createElement('div');
+                    body.className = "panel-body";
+                    var footer = document.createElement('div');
+                    footer.className = 'panel-footer';
+                    var image = document.createElement('IMG');
+                    image.setAttribute('src', value.image);
+                    var name = document.createTextNode(value.name);
+                    footer.appendChild(name);
+                    body.appendChild(image);
+                    panel.appendChild(body);
+                    panel.appendChild(footer);
+                    container.appendChild(panel);
+                    box.appendChild(container);
+                    
+                });
+            }, 
+            error: function(error){
+                console.log(error);
+            }
+        });
+      </script>
 
- <!-- Angular Material Library -->
-<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
-
-<script src="//cdn.jsdelivr.net/angular-material-icons/0.4.0/angular-material-icons.min.js"></script>
-<script src='/javascripts/main.js'></script>
 </body>
-
+<% include partials/script %>
 </html>

@@ -183,3 +183,4 @@ return {
 app.get('/posts/new', (req, res) => {
     res.render('create')
 });
+
