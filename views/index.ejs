@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
+    
+  <script src='/javascripts/main.js'></script>
+
     <style>
         body { padding-top:15px; background-color: #ccc;}
         img { width: 100%;}
@@ -54,86 +57,6 @@
     </div>
   </div>
 </div> 
-<!-- TEST -->
-<!-- <div class="container-fluid bg-3 text-center">     -->
-  <!-- <h3><%= page %></h3><br> -->
-  <!-- <div class="row">
-    <div class="col-sm-4">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      
-    </div>
-    <div class="col-sm-4"> 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-    <div class="col-sm-4"> 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-  </div>
-</div> -->
-
-      <div class="panel-body" id="all">
-
-      </div>
-<!-- <script src="js/ejs.min.js"></script> -->
-<script>
-        //the url we are making a request to
-        var url = "http://localhost:8000/pokemon";
-        $.ajax({
-            url: url,
-            method: 'get',
-            success: function(data){
-                //do something when call is successful
-                // console.log(data);
-                let pokemon = data;
-                
-                // With jQuery:
-              //   $('#all').html(html);
-                // Vanilla JS:
-                var html= document.getElementById('all').innerHTML;
-            }, 
-            error: function(error){
-                console.log(error);
-            }
-        });
-      </script>
-      
-      <script>
-        //targeting my container
-        var box = document.getElementById('all');
-        //the url we are making a request to
-        var url = "http://localhost:8000/pokemon";
-        $.ajax({
-            url: url,
-            method: 'get',
-            success: function(data){
-              //   do something when call is successful
-                console.log(data);
-                $.each(data, function(index, value){
-                    var container = document.createElement('div');
-                    container.className = 'col-xs-6 col-md-2';
-                    var panel = document.createElement('div');
-                    panel.className = 'panel panel-default';
-                    var body = document.createElement('div');
-                    body.className = "panel-body";
-                    var footer = document.createElement('div');
-                    footer.className = 'panel-footer';
-                    var image = document.createElement('IMG');
-                    image.setAttribute('src', value.image);
-                    var name = document.createTextNode(value.name);
-                    footer.appendChild(name);
-                    body.appendChild(image);
-                    panel.appendChild(body);
-                    panel.appendChild(footer);
-                    container.appendChild(panel);
-                    box.appendChild(container);
-                    
-                });
-            }, 
-            error: function(error){
-                console.log(error);
-            }
-        });
-      </script>
 
 </body>
 <% include partials/script %>
