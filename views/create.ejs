@@ -2,78 +2,66 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>create</title>
+    <title>Hero App | New</title>
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
-    <!-- include libraries(jQuery, bootstrap) -->
-<link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet"> 
-<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 
-<script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script> 
-
-
-<!-- include summernote css/js-->
-<link href="summernote.css">
-
-
-<script src='/javascripts/main.js'></script>
-
-
-
-
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script> 
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script> 
+    
+    <!-- include summernote css/js -->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
+    <link rel="stylesheet" href='/stylesheets/style.css'>
 </head>
 <body>
-    <% include ./partials/menu %>
-
-
-    <div class="container">
+    <% include partials/menu %>
+        <div class="container">
+        
         <div class="panel panel-danger">
             <div class="panel panel-heading text-center">
-                <h1>It's your time to add to the blog.</h1>
-            </div>
-
-                     
+                <h1>Share Your Modifications and car specs Here</h1>
+            </div>    
                            
                 <form method="POST" action="">
-
                     <div class="form-group col-xs-12 col-sm-6 col-sm-offset-3">
-                        <label for="exampleInputName">Hero Name</label>
-                        <input type="text" class="form-control" id="exampleInputName" aria-describedby="heroName" placeholder="Enter Hero Name" name="name">
-                        <!-- <small id=heroName" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        <label for="exampleInputName">Name of POST</label>
+                        <input type="text" class="form-control click2edit" id="exampleInputName" aria-describedby="heroName" placeholder="Car Description" name="name">
+                         <!-- <small id=heroName" class="form-text text-muted">We'll never share your email with anyone else.</small>  -->
                     </div>
                     <div class="form-group col-xs-12 col-sm-6 col-sm-offset-3">
                         <label for="exampleInputURL">Image URL</label>
-                        <input type="text" class="form-control" id="exampleInputURL" placeholder="Link to hero image" name="image_url">
-                    </div>
+                        <input type="text" class="form-control click2edit" id="exampleInputURL" placeholder="Link to car" name="image_url">
+                    </div> 
+                     <!-- <div class="form-group col-xs-12 col-sm-6 col-sm-offset-3">
+                            <label for="exampleInputDescription">description</label>
+                            <input type="text" class="form-control click2edit" id="exampleInputDescription" placeholder="Link to description" name="description">
+                        </div> -->
                     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-                        <button type="submit" class="btn btn-success btn-block">Add Hero</button>
+                        <button type="submit" class="btn btn-success btn-block">ADD a POST</button>
                     </div>
                 </form>
-                
+
             </div>
-        
             
+            
+        </div> 
+        <button id="edit" class="btn btn-primary" onclick="edit()" type="button">Edit 1</button>
+        <button id="save" class="btn btn-primary" onclick="save()" type="button">Save 2</button>
 
-            <div class="panel-footer text-center">
-                <p>All rights reserved 2018 | Nate.</p>
-            </div>
-        </div>
-    </div>
-
-    <button id="edit" class="btn btn-primary" onclick="edit()" type="button">Edit 1</button>
-       <button id="save" class="btn btn-primary" onclick="save()" type="button">Save 2</button>
-   
-        
-
-    <script src='/javascripts/main.js'></script>
-
+    <script>
+            $(document).ready(function() {
+             $('#summernote').summernote();
+                });
+            var edit = function() {
+                $('.click2edit').summernote({focus: true});
+                };
+                var save = function() {
+                var markup = $('.click2edit').summernote('code');
+                $('.click2edit').summernote('destroy');
+                };
+    </script>
 
 </body>
-<!-- include codemirror (codemirror.css, codemirror.js, xml.js, formatting.js) -->
-<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.css">
-<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/theme/monokai.css">
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/codemirror.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/3.20.0/mode/xml/xml.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/codemirror/2.36.0/formatting.js"></script>
 </html>
