@@ -23,6 +23,7 @@ router.post('/', function(req, res, next) {
     form: {
         id: id,
         name: req.body.name,
+        discription:req.body.discription,
         image: req.body.image_url,
         
     }
